@@ -9,6 +9,5 @@ public class Main {
         discoTitanic.createNewTable("Table 1");
         discoTitanic.createNewParagraph("Paragraph 5");
         discoTitanic.print();
-        //aaa
     }
 }
