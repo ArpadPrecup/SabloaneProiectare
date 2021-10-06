@@ -1,10 +1,11 @@
 import java.util.ArrayList;
+import java.util.List;
 
 public class Book {
     private String name;
-    private ArrayList<String> paragraphs = new ArrayList<>();
-    private ArrayList<String> images = new ArrayList<>();
-    private ArrayList<String> tables = new ArrayList<>();
+    private List<String> paragraphs = new ArrayList<>();
+    private List<String> images = new ArrayList<>();
+    private List<String> tables = new ArrayList<>();
 
     Book(String name){
         this.name = name;
@@ -22,15 +23,15 @@ public class Book {
         this.tables.add(newTable);
     }
 
-    public ArrayList<String> getParagraphs(){
+    public List<String> getParagraphs(){
         return this.paragraphs;
     }
 
-    public ArrayList<String> getImages(){
+    public List<String> getImages(){
         return this.images;
     }
 
-    public ArrayList<String> getTables(){
+    public List<String> getTables(){
         return this.tables;
     }
 
