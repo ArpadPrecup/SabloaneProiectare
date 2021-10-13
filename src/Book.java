@@ -3,36 +3,25 @@ import java.util.List;
 
 public class Book {
     private String name;
-    private List<String> paragraphs = new ArrayList<>();
-    private List<String> images = new ArrayList<>();
-    private List<String> tables = new ArrayList<>();
+    private List<Author> authors = new ArrayList<>();
+    private List<Chapter> chapters = new ArrayList<>();
 
     Book(String name){
         this.name = name;
     }
 
-    public void createNewParagraph(String newParagraph){
-        this.paragraphs.add(newParagraph);
+    public void addAuthor(Author author){
+        this.authors.add(author);
     }
 
-    public void createNewImage(String newImage){
-        this.images.add(newImage);
+    public int createChapter(String name){
+        Chapter ch = new Chapter((name));
+        chapters.add(ch);
+        return chapters.indexOf(ch);
     }
 
-    public void createNewTable(String newTable){
-        this.tables.add(newTable);
-    }
-
-    public List<String> getParagraphs(){
-        return this.paragraphs;
-    }
-
-    public List<String> getImages(){
-        return this.images;
-    }
-
-    public List<String> getTables(){
-        return this.tables;
+    public Chapter getChapter(int index){
+        return chapters.get(index);
     }
 
     public String getName(){
@@ -40,13 +29,10 @@ public class Book {
     }
 
     public void print(){
-        System.out.println("The book's name is " + this.getName());
-        System.out.println("Paragraphs:");
-        this.getParagraphs().forEach((paragraph) -> System.out.println(paragraph));
-        System.out.println("Images:");
-        this.getImages().forEach((image) -> System.out.println(image));
-        System.out.println("Tables:");
-        this.getTables().forEach((table) -> System.out.println(table));
+        System.out.println(this.name + " written by: ");
+        this.authors.forEach((author) -> System.out.println(author.getName()));
+        System.out.println("has the following chapters: ");
+        this.chapters.forEach((chapter -> chapter.print()));
     }
 
 }
