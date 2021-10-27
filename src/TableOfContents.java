@@ -1,11 +1,12 @@
-public class Table implements Element{
-    String something;
-    public Table(String smt){
+public class TableOfContents implements Element{
+    private String something;
+
+    public TableOfContents(String smt){
         this.something = smt;
     }
-
-    public void print(){
-        System.out.println("Table name:  " + this.something);
+    @Override
+    public void print() {
+        System.out.println("Table of contents: " + something);
     }
 
     @Override
