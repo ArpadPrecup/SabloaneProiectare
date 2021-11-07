@@ -1,11 +1,12 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class Section implements Element{
+public class Section extends Element{
     private String title;
     private List<Element> elements = new ArrayList<>();
     public Section(String name){
         this.title = name;
+        this.parent = null;
     }
 
     public String getTitle(){
@@ -24,7 +25,12 @@ public class Section implements Element{
 
     @Override
     public void add(Element e) {
-        elements.add(e);
+        if (e.parent != null)
+            System.out.println("This element already exists!");
+        else{
+            e.parent = this;
+            elements.add(e);
+        }
     }
 
     @Override
