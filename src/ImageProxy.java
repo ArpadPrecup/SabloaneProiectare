@@ -4,7 +4,7 @@ public class ImageProxy extends Element{
 
     public ImageProxy(String url){
         this.url = url;
-        image = null;
+        this.image = null;
     }
     @Override
     void print() {
@@ -18,6 +18,7 @@ public class ImageProxy extends Element{
        Image image = new Image(url);
        return image;
     }
+
     @Override
     void add(Element e) {
         return;
