@@ -3,7 +3,7 @@ import java.util.List;
 
 public class Book extends Section{
     private List<Author> authors = new ArrayList<>();
-
+    private List<Element> content = new ArrayList<>();
     public Book(String name) {
         super(name);
     }
@@ -17,5 +17,10 @@ public class Book extends Section{
         System.out.println("Authors: ");
         this.authors.forEach(author -> author.print());
         super.print();
+    }
+
+
+    public void addContent(Element e){
+        this.content.add(e);
     }
 }
