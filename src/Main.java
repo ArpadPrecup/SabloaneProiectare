@@ -17,5 +17,9 @@ public class Main {
         cap1.add(new Table("Table 1"));
 
         b.accept(new RenderContentVisitor());
+
+        BookStatistics stats = new BookStatistics();
+        cap1.accept(stats);
+        stats.printStatistics();
     }
 }
