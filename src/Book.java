@@ -20,7 +20,7 @@ public class Book extends Section{
     }
 
 
-    public void addContent(Section e){
+    public void addContent(Element e){
         this.content.add(e);
     }
 
