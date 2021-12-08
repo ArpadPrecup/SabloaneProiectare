@@ -6,13 +6,6 @@ public class ImageProxy extends Element{
         this.url = url;
         this.image = null;
     }
-    @Override
-    void print() {
-        if (this.image == null){
-            this.image = this.loadImage(this.url);
-        }
-        System.out.println("Image with name: " + this.url);
-    }
 
     private Image loadImage(String url){
        Image image = new Image(url);
@@ -32,5 +25,18 @@ public class ImageProxy extends Element{
     @Override
     Element get() {
         return this;
+    }
+
+    @Override
+    void accept(Visitor v) {
+        v.visit(this);
+    }
+
+    @Override
+    public void render() {
+        if (this.image == null){
+            this.image = this.loadImage(this.url);
+        }
+        System.out.println("Image with name: " + this.url);
     }
 }

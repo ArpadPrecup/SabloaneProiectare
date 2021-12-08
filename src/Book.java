@@ -12,15 +12,22 @@ public class Book extends Section{
         this.authors.add(author);
     }
 
-    public void print(){
+    public void render(){
         System.out.println("Book: " + super.getTitle());
         System.out.println("Authors: ");
         this.authors.forEach(author -> author.print());
-        super.print();
+        //super.render();
     }
 
 
-    public void addContent(Element e){
+    public void addContent(Section e){
         this.content.add(e);
+    }
+
+    public void accept(Visitor v){
+        v.visit(this);
+        for (Element e: content){
+            e.accept(v);
+        }
     }
 }

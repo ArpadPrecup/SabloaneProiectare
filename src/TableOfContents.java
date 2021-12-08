@@ -4,10 +4,6 @@ public class TableOfContents extends Element{
     public TableOfContents(String smt){
         this.something = smt;
     }
-    @Override
-    public void print() {
-        System.out.println("Table of contents: " + something);
-    }
 
     @Override
     public void add(Element e) {
@@ -22,5 +18,15 @@ public class TableOfContents extends Element{
     @Override
     public Element get() {
         return this;
+    }
+
+    @Override
+    void accept(Visitor v) {
+        v.visit(this);
+    }
+
+    @Override
+    public void render() {
+        System.out.println("Table of contents: " + something);
     }
 }

@@ -4,10 +4,6 @@ public class Table extends Element{
         this.something = smt;
     }
 
-    public void print(){
-        System.out.println("Table name:  " + this.something);
-    }
-
     @Override
     public void add(Element e) {
         return;
@@ -21,5 +17,15 @@ public class Table extends Element{
     @Override
     public Element get() {
         return this;
+    }
+
+    @Override
+    void accept(Visitor v) {
+        v.visit(this);
+    }
+
+    @Override
+    public void render() {
+        System.out.println("Table name:  " + this.something);
     }
 }

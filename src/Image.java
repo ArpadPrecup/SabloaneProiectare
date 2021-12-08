@@ -14,8 +14,6 @@ public class Image extends Element {
 
     }
 
-    public void print() { System.out.println("Image with name: " + this.name); }
-
     @Override
     public void add(Element e) {
         return;
@@ -30,4 +28,14 @@ public class Image extends Element {
     public Element get() {
         return this;
     };
+
+    @Override
+    void accept(Visitor v) {
+        v.visit(this);
+    }
+
+    @Override
+    public void render() {
+        System.out.println("Image with name: " + this.name);
+    }
 }

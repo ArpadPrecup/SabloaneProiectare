@@ -13,16 +13,6 @@ public class Section extends Element{
         return this.title;
     }
 
-
-
-
-
-    public void print(){
-        System.out.println(this.title);
-        elements.forEach(element -> element.print());
-    }
-
-
     @Override
     public void add(Element e) {
         if (e.parent != null)
@@ -41,5 +31,18 @@ public class Section extends Element{
     @Override
     public Element get() {
         return this;
+    }
+
+    @Override
+    void accept(Visitor v) {
+        v.visit(this);
+        for (Element e: elements){
+            e.accept(v);
+        }
+    }
+
+    @Override
+    public void render() {
+        System.out.println(this.title);
     }
 }
