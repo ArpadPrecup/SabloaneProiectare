@@ -16,3 +16,10 @@ all good
 https://github.com/ArpadPrecup/SabloaneProiectare/commit/9cea14adeeed48250353f766fcda639599aba30d
 
 all good
+
+# Feedback lab6:
+https://github.com/ArpadPrecup/SabloaneProiectare/commit/beb5e00b3665fdcbcc9cec3ace74b46546fedd98
+
+try visitor for generating ToC
+
+# Proposed grade: 10
